@@ -28,7 +28,11 @@ function Patients() {
             const response = await fetch(`http://localhost:5000/patients/${patientId}`);
             if (response.ok) {
                 const data = await response.json();
-                setPatients(prevPatients => [...prevPatients, data]);
+                setPatients(prevPatients => {
+                    const updatedPatients = [...prevPatients, data];
+                    localStorage.setItem('patients', JSON.stringify(updatedPatients));
+                    return updatedPatients;
+                });
                 setError('');
             } else {
                 setError('Patient not found');
@@ -82,6 +86,7 @@ function Patients() {
                     </table>
                 )}
             </div>
+            
         </>
     );
 }

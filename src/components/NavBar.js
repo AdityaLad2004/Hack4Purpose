@@ -23,14 +23,17 @@ function NavBar() {
                             <Link className="nav-link" id='patients' to="/patients">PATIENTS</Link>
                         </li>
                         <li className="nav-item">
-                             <p className="nav-link" >Dr. Gunjan Bhavija</p>
+                            <Link className="nav-link" id='patients' to="/allPatients">VIEW ALL</Link>
+                        </li>
+                        <li className="nav-item">
+                            <p className="nav-link" >Dr. Gunjan Bhavija</p>
                         </li>
                     </ul>
                 </div>
-                
+
             </div>
         </nav>
     );
 }
 
-export default NavBar;
+export default NavBar;
